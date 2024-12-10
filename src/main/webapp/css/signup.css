@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 10pt;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3); /* Soft pink gradient background */
+}
+
+img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.05); /* Subtle zoom effect on image hover */
+}
+
+.signUpWindow {
+  width: 350px;
+  height: auto; /* Allow the window to adjust to content height */
+  background: #ffffff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Soft shadow with depth */
+  overflow: hidden;
+  animation: slideIn 0.5s ease-out; /* Smooth sliding animation */
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.signUpHeader {
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(45deg, #6a11cb, #2575fc); /* Vibrant gradient header */
+  color: white;
+  text-align: center;
+  line-height: 70px;
+  font-size: 18pt;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.signUpContent {
+  width: 320px;
+  padding: 25px;
+  background: #fafafa;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures space between inputs and button */
+}
+
+input[type=text], input[type=password] {
+  border: 1px solid #ccc;
+  border-radius: 10px; /* Soft rounded borders for inputs */
+  width: 100%;
+  height: 45px; /* Slightly taller input fields */
+  padding: 10px 15px;
+  margin: 15px 0;
+  font-size: 16pt;
+  background: #f7f7f7;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  border-color: #6a11cb; /* Focus border color */
+  background: #e6f0ff; /* Light blue background on focus */
+  box-shadow: 0 0 15px rgba(106, 17, 203, 0.4); /* Glowing focus effect */
+}
+
+.signUpButton {
+  width: 100%;
+  height: 50px;
+  background: #6a11cb;
+  color: white;
+  font-size: 16pt;
+  text-align: center;
+  border: 1px solid #6a11cb;
+  border-radius: 10px; /* Rounded button */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-weight: bold; /* Bold text for emphasis */
+  box-sizing: border-box;
+}
+
+.signUpButton:hover {
+  background: #2575fc; /* Change to a different shade of blue on hover */
+  transform: translateY(-3px); /* Lift effect on hover */
+}
+
+.signUpButton:active {
+  transform: translateY(1px); /* Button "press" effect */
+}
+
+/* Adding a subtle box-shadow to inputs and button for better depth perception */
+input[type=text], input[type=password], .signUpButton {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the text label inside inputs for better user experience */
+input[type=text]::placeholder, input[type=password]::placeholder {
+  color: #888; /* Soft placeholder color */
+  font-size: 14pt;
+}
+
+input[type=text], input[type=password] {
+  font-size: 14pt; /* Adjust font size for better readability */
+  color: #333; /* Dark text color */
+}
+

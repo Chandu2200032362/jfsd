@@ -1,0 +1,233 @@
+/* Background and Basic Styling */
+body {
+    background-color: #E1E8EE;
+    color: #a0d2eb;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styling */
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+    background-color: #E1E8EE;
+    color: black;;
+    text-align: center;
+    font-size: 55px;
+    padding: 50px;
+    margin-bottom: 50px;
+}
+
+
+/* Login Button Styling with Glow-on-hover */
+.login {
+    display: flex;
+    gap: 10px;
+    margin-left: 1200px;
+}
+
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: black;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: rgb(13, 164, 152);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/* Container Section */
+.container {
+    max-width: 800px;
+    background-color:#E1E8EE;
+    padding: 20px;
+    margin: 40px auto;
+    border-radius: 10px;
+}
+
+/* Importance Section */
+.importance-section h2 {
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.importance-section p {
+    color: black;
+    line-height: 1.6;
+}
+
+/* Stories Section */
+.section2 {
+    display: flex;
+    justify-content: space-around;
+    gap: 1.5rem;
+    margin-top: 20px;
+}
+
+.story {
+    text-align: center;
+    background-color: #E1E8EE;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s;
+    width: 45%;
+}
+
+.story img {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.story h3 {
+    color: black;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.story p {
+    font-size: 0.9em;
+    color: black;
+}
+
+/* Footer Styling */
+.footer {
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    padding: 10px;
+    margin-top: 100px;
+    border-top: 1px solid #333;
+}
+
+
+/*Button for Citizen*/
+button {
+    margin: 20px;
+    outline: none;
+  }
+  .custom-btn {
+    width: 130px;
+    height: 40px;
+    padding: 10px 25px;
+    border: 2px solid #000;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+  }
+
+/* 3 */
+.btn-3 {
+  line-height: 39px;
+  padding: 0;
+}
+.btn-3:hover{
+  background: transparent;
+  color: #000;
+}
+.btn-3 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-3:before,
+.btn-3:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: #000;
+  transition: all 0.3s ease;
+}
+.btn-3:before {
+  height: 0%;
+  width: 2px;
+}
+.btn-3:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-3:hover:before {
+  height: 100%;
+}
+.btn-3:hover:after {
+  width: 100%;
+}
+.btn-3 span:before,
+.btn-3 span:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: #000;
+  transition: all 0.3s ease;
+}
+.btn-3 span:before {
+  width: 2px;
+  height: 0%;
+}
+.btn-3 span:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-3 span:hover:before {
+  height: 100%;
+}
+.btn-3 span:hover:after {
+  width: 100%;
+}

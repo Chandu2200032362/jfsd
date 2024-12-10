@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cHome.css">
+    <title>View All Problems</title>
+</head>
+<style>
+
+/* Style for the "Read" button */
+.intro-section button {
+    background-color: var(--red); /* Matches the primary red theme */
+    color: var(--white); /* Text color */
+    font-size: 1.2em; /* Larger font for emphasis */
+    font-weight: bold;
+    padding: 10px 20px; /* Adds padding for better appearance */
+    border: none; /* Removes default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth hover effect */
+}
+
+.intro-section button:hover {
+    background-color: var(--red-dark); /* Darker shade on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Style for the table */
+#f table {
+    width: 100%; /* Full width table */
+    border-collapse: collapse; /* Removes gaps between table cells */
+    margin: 20px 0; /* Adds space around the table */
+    font-size: 1em; /* Readable font size */
+    background-color: var(--black); /* Matches the background theme */
+    color: var(--white); /* Text color */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Rounded table corners */
+    overflow: hidden; /* Prevents overflow for rounded corners */
+}
+
+#f table th, #f table td {
+    padding: 12px 15px; /* Adds padding inside cells */
+    text-align: left; /* Aligns text to the left */
+    border-bottom: 1px solid var(--red-dark); /* Divider line between rows */
+}
+
+#f table th {
+    background-color: var(--red-dark); /* Darker background for headers */
+    color: var(--yellow); /* Header text color */
+    font-weight: bold;
+    text-transform: uppercase; /* Makes header text uppercase */
+}
+
+#f table tr:nth-child(even) {
+    background-color: var(--red); /* Alternating row color for contrast */
+}
+
+#f table tr:hover {
+    background-color: var(--red-dark); /* Highlight row on hover */
+    color: var(--yellow); /* Changes text color on hover */
+}
+
+/* Style for empty state if no data is present */
+#f {
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--red-dark);
+    margin-top: 20px;
+}
+
+
+</style>
+<body>
+    <div class="header">
+        <header>All Submitted Problems</header>
+    </div>
+    <nav class="menu">
+        <ol>
+            <li class="menu-item"><a href="adminhome.jsp">Home</a></li>
+             <li class="menu-item">
+                <a href="#0">Politician</a>
+                <ol class="sub-menu">
+                    <li class="menu-item"><a href="vPoliticians.jsp">View All</a></li>
+                    <li class="menu-item"><a href="vUpdate.jsp">Update </a></li>
+                    <li class="menu-item"><a href="vDelete.jsp">Delete</a></li>
+                   
+                </ol>
+            </li>
+            <li class="menu-item"><a href="pProblem.html">Problems</a></li>
+            <li class="menu-item"><a href="index.jsp">Logout</a></li>
+        </ol>
+    </nav>
+
+    <div class="intro-section">
+        <h2>List of Problems</h2>
+        <button onclick="read()">Read</button>
+        <button><a href="Rproblems.jsp">Review Problems</a></button>
+    </div>
+
+    <!-- Placeholder for displaying the table -->
+    <div id="f" style="margin: 20px;"></div>
+
+</body>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript">
+function read() {
+    var url = "http://localhost:8081/problem/readPro";
+    callApi("GET", url, "", readHandler);
+}
+
+function readHandler(response) {
+    var data = response;
+    var table = `<table border="1" style="width: 100%; border-collapse: collapse; text-align: left;">
+                <tr>
+                    <th>Name*</th> 
+                    <th>Sender Mail*</th> 
+                    <th>Problem*</th> 
+                    <th>Mail*</th>
+                    <th>Description*</th>
+                </tr>`;
+                
+    for(var x in data) {
+        table += `<tr>
+                    <td>` + data[x].name + `</td>
+                    <td>` + data[x].smail + `</td>
+                    <td>` + data[x].problem + `</td>
+                    <td>` + data[x].mail + `</td>
+                    <td>` + data[x].description + `</td>
+                  </tr>`;
+    }
+    table += `</table>`;
+
+    // Update the innerHTML of the element with ID 'f'
+    document.getElementById("f").innerHTML = table;
+}
+</script>
+</html>

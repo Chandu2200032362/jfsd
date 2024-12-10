@@ -1,0 +1,102 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header Styling */
+.header {
+    background-color: #4CAF50; /* Green background for the header */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+/* Navigation Menu Styling */
+.menu {
+    background-color: #333; /* Dark background for the navigation bar */
+}
+
+.menu ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-item a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    font-size: 1em;
+}
+
+.menu-item a:hover,
+.menu-item:hover > a {
+    background-color: #575757; /* Hover effect for menu items */
+}
+
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333; /* Sub-menu background matches main menu */
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item:hover .sub-menu {
+    display: block; /* Show sub-menu on hover */
+}
+
+.sub-menu .menu-item a {
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+/* Section Styling */
+.intro-section {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white; /* White background for sections */
+    border-radius: 8px;
+    max-width: 900px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for aesthetics */
+}
+
+.intro-section h3 {
+    color: #4CAF50; /* Green heading */
+    margin-bottom: 15px;
+}
+
+.intro-section p {
+    color: #333; /* Text color for readability */
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.intro-section img {
+    width: 100%; /* Full width for responsive images */
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* Footer (Optional if needed in the future) */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
